@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Intro component with sign up form</title>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="grid">
+      <div>
+        <h2 class="subtitle">Learn to code by<br />watching others</h2>
+
+        <p class="copy">
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </div>
+
+      <div>
+        <p class="trial-info">
+          <span>Try it free 7 days</span> then $20/mo. thereafter
+        </p>
+
+        <form id="form-trial">
+          <div class="form-group">
+            <label class="visually-hidden" for="first-name">First Name</label>
+            <input
+              type="text"
+              id="first-name"
+              placeholder="First Name"
+              name="first-name"
+            />
+          </div>
+          <div class="form-group">
+            <label class="visually-hidden" for="last-name">Last Name</label>
+            <input
+              type="text"
+              id="last-name"
+              placeholder="Last Name"
+              name="last-name"
+            />
+          </div>
+          <div class="form-group">
+            <label class="visually-hidden" for="email-address"
+              >Email Address</label
+            >
+            <input
+              type="text"
+              id="email-address"
+              placeholder="Email Address"
+              name="email-address"
+            />
+          </div>
+          <div class="form-group">
+            <label class="visually-hidden" for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              name="password"
+            />
+          </div>
+          <div class="form-group">
+            <button type="submit" aria-label="submit">
+              Claim your free trial
+            </button>
+          </div>
+
+          <p class="terms-and-services">
+            By clicking the button, you are agreeing to our
+            <a href="#">Terms and Services</a>
+          </p>
+        </form>
+      </div>
+    </main>
+
+    <script src="./scripts.js"></script>
+  </body>
+</html>

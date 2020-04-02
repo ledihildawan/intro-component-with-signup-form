@@ -1,0 +1,199 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: url("./images/bg-intro-mobile.png"), hsl(0, 100%, 74%);
+  min-height: 100vh;
+  font-family: Poppins, sans-serif;
+  padding: 100px 25px 70px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: 1px dashed hsl(0, 100%, 74%);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+::placeholder {
+  color: hsl(249, 10%, 26%);
+}
+
+::-ms-input-placeholder {
+  color: hsl(249, 10%, 26%);
+}
+
+::-ms-input-placeholder {
+  color: hsl(249, 10%, 26%);
+}
+
+.subtitle {
+  margin: 0 0 30px;
+  color: #fff;
+  font-size: 32px;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.copy {
+  margin: 0 0 70px;
+  color: #fff;
+  text-align: center;
+}
+
+.trial-info {
+  margin: 0 0 25px;
+  padding: 20px 75px;
+  border-radius: 8px;
+  background: hsl(248, 32%, 49%);
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 8px hsla(249, 10%, 26%, 0.2);
+}
+
+.trial-info span {
+  font-weight: 700;
+}
+
+form {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 8px hsla(249, 10%, 26%, 0.2);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  width: 100%;
+  outline: 0;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  padding: 20px;
+  color: hsl(249, 10%, 26%);
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-group input.error {
+  border-color: hsl(0, 100%, 74%);
+}
+
+.form-group input:focus {
+  border-color: hsl(249, 10%, 26%);
+}
+
+.form-group input + span {
+  display: block;
+  margin: 8px 0 0;
+  color: hsl(0, 100%, 74%);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input + span::before {
+  content: "⚠";
+  padding-right: 8px;
+}
+
+.form-group button {
+  width: 100%;
+  outline: 0;
+  border: 0;
+  border-radius: 4px;
+  padding: 20px;
+  background: hsl(154, 59%, 51%);
+  color: #fff;
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 4px #2fbb7e;
+  cursor: pointer;
+  transition: all 0.15s linear;
+  font-size: 16px;
+}
+
+.form-group button:active {
+  background: #77e2b4;
+}
+
+.form-group button:focus {
+  outline: 1px dashed hsl(154, 59%, 51%);
+}
+
+.form-group button:focus,
+.form-group button:hover {
+  transform: translateY(4px);
+  box-shadow: 0 0 #2fbb7e;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+.terms-and-services {
+  margin: 20px 0 0;
+  color: hsl(246, 25%, 77%);
+  font-size: 12px;
+  text-align: center;
+}
+
+.terms-and-services a {
+  color: hsl(0, 100%, 74%);
+  font-weight: 500;
+}
+
+@media (min-width: 1280px) {
+  .grid {
+    display: flex;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .grid div {
+    flex: 1 0 50%;
+  }
+
+  .grid > div {
+    align-self: center;
+    padding-right: 80px;
+  }
+
+  .subtitle {
+    font-size: 52px;
+  }
+
+  .subtitle,
+  .copy {
+    text-align: left;
+  }
+
+  .form-group input,
+  .form-group input + span {
+    font-size: 16px;
+  }
+}
