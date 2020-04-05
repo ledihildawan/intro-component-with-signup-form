@@ -3,6 +3,14 @@ const formTrial = document.forms['form-trial']
 const hideError = (input) => {
   if (input.nextElementSibling) input.nextElementSibling.remove()
 
+  if (input.classList.contains('error')) {
+    input.classList.add('success')
+
+    setTimeout(() => {
+      input.classList.remove('success')
+    }, 500)
+  }
+
   input.classList.remove('error')
 }
 
@@ -29,9 +37,10 @@ const title = (string) => {
 
 const required = (inputs) => {
   inputs.forEach((input) => {
+    const name = title(input.name)
+
     if (input.value.trim() === '') {
-      const name = input.name
-      showError(input, `${title(name)} field is required.`)
+      showError(input, `${name} field is required.`)
     } else {
       hideError(input)
     }
@@ -39,15 +48,15 @@ const required = (inputs) => {
 }
 
 const onlyAlphabet = (inputs) => {
-  const pattern = /^[a-zA-Z]+$/g
-  inputs.forEach((input) => {
-    const test = pattern.test(input.value)
-    const name = input.name
+  const pattern = /^[A-Z ]+$/i
 
-    if (test) {
+  inputs.forEach((input) => {
+    const name = title(input.name)
+
+    if (pattern.test(input.value.trim())) {
       hideError(input)
     } else {
-      showError(input, `${title(name)} field must be alphabet characters.`)
+      showError(input, `${name} field must be alphabet characters.`)
     }
   })
 }
@@ -56,7 +65,10 @@ const checkValidEmail = (input) => {
   const pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   const test = pattern.test(input.value)
 
-  if (!test) return showError(input, 'Please provide valid email')
+  if (!test) {
+    showError(input, 'Please provide valid email')
+    return
+  }
 
   return true
 }
@@ -64,11 +76,15 @@ const checkValidEmail = (input) => {
 const checkLength = (inputs, min, max) => {
   inputs.forEach((input) => {
     const value = input.value
-    const name = input.name
+    const name = title(input.name)
 
-    if (value.length < min) showError(input, `${title(name)} minimal ${min} characters.`)
+    if (value.length < min) {
+      showError(input, `${name} minimal ${min} characters.`)
+    }
 
-    if (value.length > max) showError(input, `${title(name)} maximal ${max} characters.`)
+    if (value.length > max) {
+      showError(input, `${name} maximal ${max} characters.`)
+    }
   })
 }
 

@@ -89,10 +89,16 @@ form {
   font-family: inherit;
   font-weight: 600;
   font-size: 14px;
+  transition: border-color 0.25s ease;
 }
 
 .form-group input.error {
   border-color: hsl(0, 100%, 74%);
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.form-group input.success {
+  border-color: #38cc8c;
 }
 
 .form-group input:focus {
@@ -195,5 +201,28 @@ form {
   .form-group input,
   .form-group input + span {
     font-size: 16px;
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
   }
 }
